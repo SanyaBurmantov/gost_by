@@ -19,7 +19,7 @@ async function bootstrap() {
       .setTitle('Каталог строительных товаров')
       .setDescription('API для управления товарами')
       .setVersion('1.0')
-      .addTag('products')
+      .addTag('parsed_products')
       .build();
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api/docs', app, document);

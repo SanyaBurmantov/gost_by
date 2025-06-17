@@ -14,7 +14,7 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { ProductCategory } from './entities/product.entity';
 
-@Controller('api/products')
+@Controller('api/parsed_products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 

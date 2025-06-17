@@ -47,5 +47,5 @@ model Product {
   images      String[]  @db.Text
 
 
-  @@map("products")
+  @@map("parsed_products")
 }

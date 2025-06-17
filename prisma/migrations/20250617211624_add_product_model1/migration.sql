@@ -1,7 +1,7 @@
 /*
   Warnings:
 
-  - The `keywords` column on the `products` table would be dropped and recreated. This will lead to data loss if there is data in the column.
+  - The `keywords` column on the `parsed_products` table would be dropped and recreated. This will lead to data loss if there is data in the column.
 
 */
 -- AlterTable
