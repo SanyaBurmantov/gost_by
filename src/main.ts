@@ -13,22 +13,24 @@ async function bootstrap() {
   try {
     const app = await NestFactory.create(AppModule);
     app.enableCors();
-    await app.listen(port);
-    logger.log(`Backend server started on port ${port}`);
+
+    // Настройка Swagger ДО app.listen()
     const config = new DocumentBuilder()
       .setTitle('Каталог строительных товаров')
-      .setDescription('API для управления товарами (болты, инструменты, краски и др.)')
+      .setDescription('API для управления товарами')
       .setVersion('1.0')
       .addTag('products')
       .build();
-
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api/docs', app, document);
+
+    await app.listen(port);
+    logger.log(`Backend server started on port ${port}`);
+    logger.log(`Swagger docs available at http://localhost:${port}/api/docs`);
   } catch (error) {
     logger.error('Failed to start application', error.stack);
     process.exit(1);
   }
-
 }
 
 bootstrap();
